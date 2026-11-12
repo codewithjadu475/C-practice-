@@ -1,0 +1,95 @@
+#include <stdio.h>
+
+int main()
+{
+    int pannumbers[] = {10101, 10102, 10103};
+    int aadharnumbers[] = {20201, 20202, 20203};
+    int apaarIds[] = {30301, 30302, 30303};
+    int drivinglicense[] = {40401, 40402, 40403};
+    int passport[] = {50501, 50502, 50503};
+
+    int i, inputId, choice;
+    int size = 3;
+    int verified = 0;
+
+    printf("Select Id type to verify : \n");
+    printf("1. PAN Number\n");
+    printf("2. AADHAR Number\n");
+    printf("3. APAAR Ids\n");
+    printf("4. Driving License\n");
+    printf("5. Passport\n");
+    printf("enter your choice : ");
+    scanf("%d", &choice);
+
+    printf("enter the unique Id number : ");
+    scanf("%d", &inputId);
+
+    switch (choice)
+    {
+        case 1:
+            for (i = 0; i < size; i++)
+            {
+                if (inputId == pannumbers[i])
+                {
+                    verified = 1;
+                    break;
+                }
+            }
+            break;
+
+        case 2:
+            for (i = 0; i < size; i++)
+            {
+                if (inputId == aadharnumbers[i])
+                {
+                    verified = 1;
+                    break;
+                }
+            }
+            break;
+
+        case 3:
+            for (i = 0; i < size; i++)
+            {
+                if (inputId == apaarIds[i])
+                {
+                    verified = 1;
+                    break;
+                }
+            }
+            break;
+
+        case 4:
+            for (i = 0; i < size; i++)
+            {
+                if (inputId == drivinglicense[i])
+                {
+                    verified = 1;
+                    break;
+                }
+            }
+            break;
+
+        case 5:
+            for (i = 0; i < size; i++)
+            {
+                if (inputId == passport[i])
+                {
+                    verified = 1;
+                    break;
+                }
+            }
+            break;
+
+        default:
+            printf("Invalid choice\n");
+            break;
+    }
+
+    if (verified == 1)
+        printf("ID Verified\n");
+    else if (choice >= 1 && choice <= 5)
+        printf("ID Not Verified\n");
+
+    return 0;
+}
